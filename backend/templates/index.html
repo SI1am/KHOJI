@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+                  
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+  
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+  
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+  
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+}
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+  
+.btn.login {
+    background-color: #333;
+}
+  
+    </style>
+</head>
+<header>
+    <div class="logo">Khoji</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#" class="btn">Scan</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+    <div class="container">
+        <h1>Phishing URL Scanner</h1>
+        <form action="/scan" method="POST">
+            <label for="url">Enter a URL to scan:</label>
+            <input type="text" id="url" name="url" placeholder="https://example.com" required>
+
+            <label for="model">Select Model:</label>
+            <select id="model" name="model" required>
+                <option value="model1">Model 1 (phishing.pkl)</option>
+                <option value="model2">Model 2 (phishing_detector.pkl)</option>
+            </select>
+
+            <button type="submit">Scan</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h3>Result for: {{ url }}</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
