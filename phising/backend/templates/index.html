@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+   
+</head>
+<header>
+    <div class="logo">Khoji</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#" class="btn">Scan</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+    <div class="container">
+        <h1>Phishing URL Scanner</h1>
+        <form action="/scan" method="POST">
+            <label for="url">Enter a URL to scan:</label>
+            <input type="text" id="url" name="url" placeholder="https://example.com" required>
+
+            <label for="model">Select Model:</label>
+            <select id="model" name="model" required>
+                <option value="model1">Model 1 (phishing.pkl)</option>
+                
+            </select>
+
+            <button type="submit">Scan</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h3>Result for: {{ url }}</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

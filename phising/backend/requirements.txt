@@ -1,0 +1,24 @@
+Pandas
+Numpy
+Seaborn
+Matplotlib
+Plotly
+Time
+LogisticRegression
+MultinomialNB
+train_test_split
+ classification_report
+ confusion_matrix
+ RegexpTokenizer
+ SnowballStemmer
+ CountVectorizer
+ make_pipeline
+ Image
+ Word cloud
+ Beautiful Soup
+ selenium
+ NetworkX
+ Warnings
+ uvicorn
+ fastapi 
+ joblib
